@@ -60,12 +60,10 @@ public class TicTacToe {
     }
 
     private static boolean isValidMove(int row, int col) {
-        if (row < 0 || row >= board.length || col < 0 || col >= board[0].length) {
-            return false;
-        }
-        if (board[row][col].equals(" ")) {
-            return false;
-        } return board[row][col].equals(" ");
+        boolean retVal = false;
+            if (board[row][col].equals(" ")) {
+                retVal = true;
+            } return retVal;
 } private static boolean isWin(String player) {
             return isRowWin(player) || isColWin(player) || isDiagonalWin(player);
         } private static boolean isRowWin(String player) {
